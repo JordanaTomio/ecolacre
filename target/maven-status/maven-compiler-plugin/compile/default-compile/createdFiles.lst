@@ -1,0 +1,7 @@
+src\trabalho\repositories\SolicitacaoFisicaRepository.class
+src\trabalho\WebConfiguration.class
+src\trabalho\controllers\SolicitacaoController.class
+src\trabalho\Main.class
+src\trabalho\repositories\SolicitacaoJuridicaRepository.class
+src\trabalho\domain\SolicitacaoPessoaJuridica.class
+src\trabalho\domain\SolicitacaoPessoaFisica.class
