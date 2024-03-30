@@ -42,15 +42,27 @@ public class SolicitacaoController {
         }
     }
 
-    @GetMapping("/cpf/{cpf}")
-    ResponseEntity<List<SolicitacaoPessoaFisica>> findByCpf(@PathVariable String cpf) {
+    @GetMapping("/fisica/cpf/{cpf}")
+    ResponseEntity<List<SolicitacaoPessoaFisica>> findByCpfPF(@PathVariable String cpf) {
         List<SolicitacaoPessoaFisica> list = repositoryPessoaFisica.findByCpf(cpf);
         return ResponseEntity.ok(list);
     }
 
-    @GetMapping("/id/{id}")
-    ResponseEntity<Optional<SolicitacaoPessoaFisica>> findById(@PathVariable Long id) {
+    @GetMapping("/fisica/id/{id}")
+    ResponseEntity<Optional<SolicitacaoPessoaFisica>> findByIdPF(@PathVariable Long id) {
         Optional<SolicitacaoPessoaFisica> pessoaFisica = repositoryPessoaFisica.findById(id);
+        return ResponseEntity.ok(pessoaFisica);
+    }
+
+    @GetMapping("/juridica/cpf/{cpf}")
+    ResponseEntity<List<SolicitacaoPessoaJuridica>> findByCpfPJ(@PathVariable String cpf) {
+        List<SolicitacaoPessoaJuridica> list = repositoryPessoaJuridica.findByCpf(cpf);
+        return ResponseEntity.ok(list);
+    }
+
+    @GetMapping("/juridica/id/{id}")
+    ResponseEntity<Optional<SolicitacaoPessoaJuridica>> findByIdPJ(@PathVariable Long id) {
+        Optional<SolicitacaoPessoaJuridica> pessoaFisica = repositoryPessoaJuridica.findById(id);
         return ResponseEntity.ok(pessoaFisica);
     }
 
