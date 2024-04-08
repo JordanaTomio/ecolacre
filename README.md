@@ -31,9 +31,9 @@ Post - "/solicitacoes/fisica"
     int menorLarguraPortaCasaCm;
     int larguraAssentoCm;
 
-    int responsavelNome;
-    int responsavelTelefone;
-    int responsavelEmail;
+    string responsavelNome;
+    string responsavelTelefone;
+    string responsavelEmail;
 
 ### SolicitacaoJuridica
 Post - "/solicitacoes/juridica"

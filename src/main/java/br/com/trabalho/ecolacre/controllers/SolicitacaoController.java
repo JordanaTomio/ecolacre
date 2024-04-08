@@ -5,6 +5,7 @@ import br.com.trabalho.ecolacre.domain.SolicitacaoPessoaJuridica;
 import br.com.trabalho.ecolacre.repositories.SolicitacaoFisicaRepository;
 import br.com.trabalho.ecolacre.repositories.SolicitacaoJuridicaRepository;
 import jakarta.transaction.Transactional;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,9 +18,10 @@ import java.util.Optional;
 @Transactional
 @RequestMapping("/solicitacoes")
 public class SolicitacaoController {
-
+    @Autowired
     private SolicitacaoFisicaRepository repositoryPessoaFisica;
 
+    @Autowired
     private SolicitacaoJuridicaRepository repositoryPessoaJuridica;
 
     @PostMapping("/fisica")

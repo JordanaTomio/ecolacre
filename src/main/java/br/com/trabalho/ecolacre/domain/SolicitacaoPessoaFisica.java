@@ -98,15 +98,15 @@ public class SolicitacaoPessoaFisica {
 
     @JsonProperty("responsavel_nome")
     @Column
-    public int responsavelNome;
+    public String responsavelNome;
 
     @JsonProperty("responsavel_telefone")
     @Column
-    public int responsavelTelefone;
+    public String responsavelTelefone;
 
     @JsonProperty("responsavel_email")
     @Column
-    public int responsavelEmail;
+    public String responsavelEmail;
 
     public SolicitacaoPessoaFisica() {
     }
@@ -271,27 +271,27 @@ public class SolicitacaoPessoaFisica {
         this.larguraAssentoCm = larguraAssentoCm;
     }
 
-    public int getResponsavelNome() {
+    public String getResponsavelNome() {
         return responsavelNome;
     }
 
-    public void setResponsavelNome(int responsavelNome) {
+    public void setResponsavelNome(String responsavelNome) {
         this.responsavelNome = responsavelNome;
     }
 
-    public int getResponsavelTelefone() {
+    public String getResponsavelTelefone() {
         return responsavelTelefone;
     }
 
-    public void setResponsavelTelefone(int responsavelTelefone) {
+    public void setResponsavelTelefone(String responsavelTelefone) {
         this.responsavelTelefone = responsavelTelefone;
     }
 
-    public int getResponsavelEmail() {
+    public String getResponsavelEmail() {
         return responsavelEmail;
     }
 
-    public void setResponsavelEmail(int responsavelEmail) {
+    public void setResponsavelEmail(String responsavelEmail) {
         this.responsavelEmail = responsavelEmail;
     }
 }

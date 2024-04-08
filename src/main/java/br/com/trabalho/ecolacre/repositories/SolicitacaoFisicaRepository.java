@@ -7,11 +7,8 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-
 @Repository
 @Transactional
 public interface SolicitacaoFisicaRepository extends JpaRepository<SolicitacaoPessoaFisica, Long> {
-
     List<SolicitacaoPessoaFisica> findByCpf(String cpf);
-
 }
