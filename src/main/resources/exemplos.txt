@@ -1,0 +1,50 @@
+Solicitacao fisica:
+{
+    "nome": "teste",
+    "cpf": "1216156",
+    "data_nascimento": "2012-04-23",
+    "endereco": "endereco teste",
+    "cidade": "cidade teste",
+    "telefone": "132165",
+    "rg": "131456416",
+    "uf": "sc",
+    "email": "teste@teste",
+    "renda_familiar_media": "ablubleble",
+    "estuda": true,
+    "trabalha": true,
+    "concorda_termos_projeto": true,
+    "razao_cadeira_rodas": "razao teste",
+    "largura_costas_cm": 1,
+    "peso_kg": 1,
+    "quadril_cm": 1,
+    "altura_cm": 1,
+    "menor_largura_porta_cm": 1,
+    "largura_assento_cm": 1,
+    "responsavel_nome": "teste",
+    "responsavel_telefone": "1234",
+    "responsavel_email": "teste@teste"
+}
+
+Solicitacao juridica:
+{
+    "razao_social": "razao teste",
+    "nome_fantasia": "fantasia teste",
+    "cnpj": "1315468/001",
+    "endereco": "endereco teste",
+    "cidade": "cidade teste",
+    "telefone": "47984410339",
+    "uf": "sc",
+    "cep": "89023400",
+    "email": "teste@teste",
+    "atividades_desempenhadas": "atividades teste",
+    "incentivo_financeiro": false,
+    "media_pessoas_benef_mensal": 10,
+    "qtd_cadeira_rodas_instituicao": 0,
+    "cadeira_rodas_emprestadas": true,
+    "desc_modelo_cadeira_rodas": "cadeira teste",
+    "responsavel_nome": "teste",
+    "responsavel_telefone": "teste",
+    "responsavel_email": "teste",
+    "concorda_termos_projeto": true,
+    "razao_cadeira_rodas": "sim"
+}

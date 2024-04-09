@@ -74,15 +74,15 @@ public class SolicitacaoPessoaJuridica {
 
     @JsonProperty("responsavel_nome")
     @Column
-    public int responsavelNome;
+    public String responsavelNome;
 
     @JsonProperty("responsavel_telefone")
     @Column
-    public int responsavelTelefone;
+    public String responsavelTelefone;
 
     @JsonProperty("responsavel_email")
     @Column
-    public int responsavelEmail;
+    public String responsavelEmail;
 
     @JsonProperty("concorda_termos_projeto")
     @Column
@@ -213,30 +213,6 @@ public class SolicitacaoPessoaJuridica {
 
     public void setDescricaoModeloCadeiraRodas(String descricaoModeloCadeiraRodas) {
         DescricaoModeloCadeiraRodas = descricaoModeloCadeiraRodas;
-    }
-
-    public int getResponsavelNome() {
-        return responsavelNome;
-    }
-
-    public void setResponsavelNome(int responsavelNome) {
-        this.responsavelNome = responsavelNome;
-    }
-
-    public int getResponsavelTelefone() {
-        return responsavelTelefone;
-    }
-
-    public void setResponsavelTelefone(int responsavelTelefone) {
-        this.responsavelTelefone = responsavelTelefone;
-    }
-
-    public int getResponsavelEmail() {
-        return responsavelEmail;
-    }
-
-    public void setResponsavelEmail(int responsavelEmail) {
-        this.responsavelEmail = responsavelEmail;
     }
 
     public boolean isConcordaComTermosDoProjeto() {
