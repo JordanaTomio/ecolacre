@@ -5,6 +5,7 @@ import br.com.trabalho.ecolacre.domain.SolicitacaoPessoaJuridica;
 import br.com.trabalho.ecolacre.repositories.SolicitacaoFisicaRepository;
 import br.com.trabalho.ecolacre.repositories.SolicitacaoJuridicaRepository;
 import jakarta.transaction.Transactional;
+import org.apache.commons.lang3.time.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,6 +28,7 @@ public class SolicitacaoController {
     @PostMapping("/fisica")
     Integer saveUser(@RequestBody SolicitacaoPessoaFisica solicitacao) {
         try {
+            solicitacao.dataNascimento = DateUtils.addDays(solicitacao.dataNascimento, 1);
             repositoryPessoaFisica.save(solicitacao);
             return HttpStatus.OK.value();
         } catch (Exception e) {
@@ -56,9 +58,9 @@ public class SolicitacaoController {
         return ResponseEntity.ok(pessoaFisica);
     }
 
-    @GetMapping("/juridica/cpf/{cpf}")
-    ResponseEntity<List<SolicitacaoPessoaJuridica>> findByCpfPJ(@PathVariable String cpf) {
-        List<SolicitacaoPessoaJuridica> list = repositoryPessoaJuridica.findByCpf(cpf);
+    @GetMapping("/juridica/cnpj/{cnpj}")
+    ResponseEntity<List<SolicitacaoPessoaJuridica>> findByCnpj(@PathVariable String cnpj) {
+        List<SolicitacaoPessoaJuridica> list = repositoryPessoaJuridica.findByCnpj(cnpj);
         return ResponseEntity.ok(list);
     }
 

@@ -53,7 +53,6 @@ public class SolicitacaoPessoaFisica {
     @Column
     public String rendaFamiliarMedia;
 
-
     @JsonProperty("estuda")
     @Column
     public boolean estuda;

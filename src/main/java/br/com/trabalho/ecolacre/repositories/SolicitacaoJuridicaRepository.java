@@ -12,6 +12,6 @@ import java.util.List;
 @Transactional
 public interface SolicitacaoJuridicaRepository extends JpaRepository<SolicitacaoPessoaJuridica, Long> {
 
-    List<SolicitacaoPessoaJuridica> findByCpf(String cpf);
+    List<SolicitacaoPessoaJuridica> findByCnpj(String cnpj);
 
 }
