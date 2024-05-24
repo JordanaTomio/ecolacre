@@ -2,6 +2,7 @@
 ## ENTREGAS ##
 Primeira versão - 11/04
 
+Ultima versão - 27/06
 
 ## CONTRATOS ##
 
@@ -61,3 +62,24 @@ Post - "/solicitacoes/juridica"
 
     boolean concordaComTermosDoProjeto;
     String razaoCadeiraDeRodas;
+
+
+### Ponto de Coleta
+Post - "/ponto-coleta/criar"
+
+    String nomeResponsavel;
+    String telefone;
+    String email;
+
+    String razaoSocial;
+    String nomeFantasia;
+    String cnpjInstituicao;
+    boolean materialDivulgacao;
+
+    String endereco;
+    String cep;
+    String bairro;
+    String cidade;
+    String uf;
+
+    String formaFuncionamento; //interno ou externo
