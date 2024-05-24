@@ -7,13 +7,11 @@ import br.com.trabalho.ecolacre.repositories.SolicitacaoJuridicaRepository;
 import jakarta.transaction.Transactional;
 import org.apache.commons.lang3.time.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
-
 
 @RestController
 @Transactional
@@ -26,23 +24,23 @@ public class SolicitacaoController {
     private SolicitacaoJuridicaRepository repositoryPessoaJuridica;
 
     @PostMapping("/fisica")
-    Integer saveUser(@RequestBody SolicitacaoPessoaFisica solicitacao) {
+    ResponseEntity<Integer> saveUser(@RequestBody SolicitacaoPessoaFisica solicitacao) {
         try {
             solicitacao.dataNascimento = DateUtils.addDays(solicitacao.dataNascimento, 1);
             repositoryPessoaFisica.save(solicitacao);
-            return HttpStatus.OK.value();
+            return ResponseEntity.ok(solicitacao.getId());
         } catch (Exception e) {
-            return HttpStatus.BAD_REQUEST.value();
+            return ResponseEntity.ofNullable(solicitacao.getId());
         }
     }
 
     @PostMapping("/juridica")
-    Integer saveUser(@RequestBody SolicitacaoPessoaJuridica solicitacao) {
+    ResponseEntity<Integer> saveUser(@RequestBody SolicitacaoPessoaJuridica solicitacao) {
         try {
             repositoryPessoaJuridica.save(solicitacao);
-            return HttpStatus.OK.value();
+            return ResponseEntity.ok(solicitacao.getId());
         } catch (Exception e) {
-            return HttpStatus.UNPROCESSABLE_ENTITY.value();
+            return ResponseEntity.ofNullable(solicitacao.getId());
         }
     }
 

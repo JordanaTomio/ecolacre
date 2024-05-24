@@ -230,4 +230,8 @@ public class SolicitacaoPessoaJuridica {
     public void setRazaoCadeiraDeRodas(String razaoCadeiraDeRodas) {
         this.razaoCadeiraDeRodas = razaoCadeiraDeRodas;
     }
+
+    public int getId() {
+        return id;
+    }
 }

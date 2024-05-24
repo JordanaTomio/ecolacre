@@ -293,4 +293,8 @@ public class SolicitacaoPessoaFisica {
     public void setResponsavelEmail(String responsavelEmail) {
         this.responsavelEmail = responsavelEmail;
     }
+
+    public int getId() {
+        return id;
+    }
 }
