@@ -1,5 +1,6 @@
 package br.com.trabalho.ecolacre.controllers;
 
+import br.com.trabalho.ecolacre.application.EmailSenderService;
 import br.com.trabalho.ecolacre.domain.SolicitacaoPessoaFisica;
 import br.com.trabalho.ecolacre.domain.SolicitacaoPessoaJuridica;
 import br.com.trabalho.ecolacre.repositories.SolicitacaoFisicaRepository;
@@ -23,11 +24,17 @@ public class SolicitacaoController {
     @Autowired
     private SolicitacaoJuridicaRepository repositoryPessoaJuridica;
 
+    @Autowired
+    private EmailSenderService emailSenderService;
+
     @PostMapping("/fisica")
     ResponseEntity<Integer> saveUser(@RequestBody SolicitacaoPessoaFisica solicitacao) {
         try {
             solicitacao.dataNascimento = DateUtils.addDays(solicitacao.dataNascimento, 1);
-            repositoryPessoaFisica.save(solicitacao);
+            SolicitacaoPessoaFisica solicitacaoPessoaFisica = repositoryPessoaFisica.save(solicitacao);
+
+            emailSenderService.sendEmail(solicitacaoPessoaFisica.getEmail(), "Solicitacao cadeira de rodas", "Codigo para consultar o status do seu pedido: " + solicitacaoPessoaFisica.getId());
+
             return ResponseEntity.ok(solicitacao.getId());
         } catch (Exception e) {
             return ResponseEntity.ofNullable(solicitacao.getId());
@@ -37,7 +44,9 @@ public class SolicitacaoController {
     @PostMapping("/juridica")
     ResponseEntity<Integer> saveUser(@RequestBody SolicitacaoPessoaJuridica solicitacao) {
         try {
-            repositoryPessoaJuridica.save(solicitacao);
+            SolicitacaoPessoaJuridica solicitacaoPessoaJuridica = repositoryPessoaJuridica.save(solicitacao);
+
+            emailSenderService.sendEmail(solicitacaoPessoaJuridica.getEmail(), "Solicitacao cadeira de rodas", "Codigo para consultar o status do seu pedido: " + solicitacaoPessoaJuridica.getId());
             return ResponseEntity.ok(solicitacao.getId());
         } catch (Exception e) {
             return ResponseEntity.ofNullable(solicitacao.getId());
